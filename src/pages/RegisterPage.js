@@ -31,12 +31,8 @@ function RegisterPage() {
       return
     }
 
-
-
-
     data.email = data.email.toLowerCase();
     dispatch(registerUser(data));
-
   }
 
   return (

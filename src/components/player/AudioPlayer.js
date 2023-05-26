@@ -32,7 +32,7 @@ const AudioPlayerWrapper = styled.div`
 `;
 
 const AudioPlayerContentWrapper = styled.div`
-gap: 5px;
+  gap: 5px;
   width: 100vw; 
   max-width: 1200px; 
   display: flex;
@@ -142,11 +142,11 @@ export default function AudioPlayer() {
     if (currentIsPlaying) {
       setTimeout(() => {
         audioPlayer.current.play();
-      }, 100);
+      }, 300);
     } else {
       setTimeout(() => {
         audioPlayer.current.pause();
-      }, 100);
+      }, 300);
     }
 
     syncMaxDuration()
@@ -189,7 +189,7 @@ export default function AudioPlayer() {
         PlayNextTrack();
       });
 
-      audioPlayer.current.addEventListener('ended', () => {
+      audioPlayer.current.addEventListener('ended', (e) => {
         PlayNextTrack();
       });
 
@@ -239,7 +239,7 @@ export default function AudioPlayer() {
       const seconds = Math.floor(audioPlayer.current?.duration);
       dispatch(setDuration(seconds));
       progressBar.current.max = seconds ? seconds : 0;
-    }, 300);
+    }, 500);
 
   }
 

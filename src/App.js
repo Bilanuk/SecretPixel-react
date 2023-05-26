@@ -53,6 +53,7 @@ function App() {
                         <Route path='/playlists' element={<PlaylistsPage/>}/>
                     </Routes>
                 </PageContainer>
+            {activePlayList?.id && <HeaderPlaceholder/>}
             {activePlayList?.id && <AudioPlayer/>}
         </Router>
     )

@@ -1,8 +1,11 @@
+import { PageLineSeparator, PageSection, PageSectionName  } from "../styled/styles"
+
 function SettingsPage() {
   return (
-    <h2>
-      Settings page
-    </h2>
+    <PageSection>
+      <PageSectionName>Settings...</PageSectionName>
+      <PageLineSeparator />
+    </PageSection>
   )
 }
 
