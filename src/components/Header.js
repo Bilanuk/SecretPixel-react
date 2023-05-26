@@ -1,9 +1,8 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux'
 import { getUserDetails, userLogout } from "../redux/user/userActions";
 import {
   Logo,
-  StyledButton,
   StyledNav,
   StyledLogo,
   StyledHeader,
@@ -11,13 +10,11 @@ import {
   StyledDropDown,
   StyledDropDownContent
 } from "../styled/styles";
-import { AiOutlineHeart } from "react-icons/ai";
 import { BsPerson } from "react-icons/bs";
-import { RiPlayListFill } from "react-icons/ri";
 import { MdLogout } from "react-icons/md"
 import { IoMdArrowDropdown } from "react-icons/io"
 import { CiSettings } from "react-icons/ci";
-
+// 
 const Header = () => {
   const { userInfo } = useSelector((state) => state.user)
   const dispatch = useDispatch()
@@ -40,8 +37,6 @@ const Header = () => {
                 {userInfo?.username} <IoMdArrowDropdown/>
                 <StyledDropDownContent>
                   <StyledNavLink to='/user-profile'><BsPerson/>Profile</StyledNavLink>
-                  <StyledNavLink to='/playlists'><RiPlayListFill/>Playlists</StyledNavLink>
-                  <StyledNavLink to='#'><AiOutlineHeart/>Likes</StyledNavLink>
                   <hr/>
                   <StyledNavLink to='/settings'>
                     <CiSettings/>Settings

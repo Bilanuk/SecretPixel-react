@@ -43,19 +43,19 @@ function LoginPage() {
   }
 
   return (
-    <form autocomplete="off" onSubmit={handleSubmit(submitForm)} >
+    <form autoComplete="off" onSubmit={handleSubmit(submitForm)} >
       {error && <Error>{error}</Error>}
       <h1>  Welcome</h1>
 
       <div className='form'>
-        <input  autocomplete="off"
+        <input  autoComplete="off"
           type='email'
                 className='form-input'
                 {...register('email')}
           required
         />
-        <label for="text" class="label-name">
-          <span class="content-name">
+        <label htmlFor="text" className="label-name">
+          <span className="content-name">
             Email
           </span>
         </label>
@@ -63,13 +63,13 @@ function LoginPage() {
 
 
       <div className='form'>
-        <input autocomplete="off"
+        <input autoComplete="off"
           type='password'
           {...register('password')}
           required
         />
-        <label for="text" class="label-name" >
-          <span class="content-name">
+        <label htmlFor="text" className="label-name" >
+          <span className="content-name">
             Password
           </span>
         </label>

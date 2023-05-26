@@ -6,9 +6,7 @@ import ProfilePage from './pages/ProfilePage'
 import HomePage from './pages/HomePage'
 import ProtectedRoute from './features/ProtectedRoute'
 import SettingsPage from "./pages/SettingsPage";
-import PlaylistsPage from "./pages/PlaylistsPage";
 import {PageContainer} from "./styled/styles";
-import AudioPlayer from "./components/player/AudioPlayer";
 import styled from 'styled-components'
 import './App.css'
 import {useSelector} from "react-redux";
@@ -28,19 +26,10 @@ const HeaderPlaceholder = styled.div`
 `;
 
 function App() {
-    const activePlayList = useSelector((state) => state.playlist)
-
     return (
         <Router>
             <Header/>
             <HeaderPlaceholder/>
-            <CubesWrapper>
-                <div className="cube"></div>
-                <div className="cube"></div>
-                <div className="cube"></div>
-                <div className="cube"></div>
-                <div className="cube"></div>
-            </CubesWrapper>
                 <PageContainer>
                     <Routes>
                         <Route path='/' element={<HomePage/>}/>
@@ -50,11 +39,8 @@ function App() {
                             <Route path='/user-profile' element={<ProfilePage/>}/>
                         </Route>
                         <Route path='/settings' element={<SettingsPage/>}/>
-                        <Route path='/playlists' element={<PlaylistsPage/>}/>
                     </Routes>
                 </PageContainer>
-            {activePlayList?.id && <HeaderPlaceholder/>}
-            {activePlayList?.id && <AudioPlayer/>}
         </Router>
     )
 }

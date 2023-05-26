@@ -1,7 +1,6 @@
 import { StyledButton } from "./StyledButtons";
 import { StyledHeader, StyledNav, StyledLogo, StyledDropDown, StyledDropDownContent} from "./StyledHeader";
 import { StyledNavLink } from "./StyledLinks";
-import { StyledPlaylistsWrapper } from "./StyledPlaylist";
 import Logo from "../shared/KnSoundLogo.svg"
 
 import styled from "styled-components";
@@ -35,4 +34,4 @@ const PageLineSeparator = styled.hr`
 `;
 
 export {StyledButton, StyledLogo, StyledNav, StyledHeader, StyledNavLink,
-  Logo, StyledDropDown, StyledDropDownContent, PageContainer, PageSection, PageSectionName, PageLineSeparator, StyledPlaylistsWrapper}
+  Logo, StyledDropDown, StyledDropDownContent, PageContainer, PageSection, PageSectionName, PageLineSeparator }

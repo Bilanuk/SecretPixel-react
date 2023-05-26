@@ -3,7 +3,7 @@ import { PageLineSeparator, PageSection, PageSectionName  } from "../styled/styl
 function SettingsPage() {
   return (
     <PageSection>
-      <PageSectionName>Settings...</PageSectionName>
+      <PageSectionName>Settings</PageSectionName>
       <PageLineSeparator />
     </PageSection>
   )

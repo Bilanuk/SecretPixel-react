@@ -6,14 +6,6 @@ export const knSoundApi = createApi({
     reducerPath: 'knSoundApi',
     baseQuery: fetchBaseQuery({baseUrl: KnSoundApiUrl, credentials: 'include'}),
     endpoints: (build) => ({
-        getMyPlaylists: build.query({
-            query: () => `playlists`,
-            providesTags: ['Playlists'],
-        }),
-        getRecentPlaylists: build.query({
-            query: () => `recent-playlists`,
-            providesTags: ['Playlists'],
-        }),
         getRecommendedPlaylists: build.query({
             query: () => `recomended-playlists`,
             providesTags: ['Playlists'],
@@ -34,4 +26,4 @@ export const knSoundApi = createApi({
     })
 });
 
-export const { useGetMyPlaylistsQuery, useGetRecentPlaylistsQuery, useGetRecommendedPlaylistsQuery, useShowPlaylistQuery, useCreatePlaylistMutation } = knSoundApi;
+export const { useGetRecommendedPlaylistsQuery, useShowPlaylistQuery, useCreatePlaylistMutation } = knSoundApi;
