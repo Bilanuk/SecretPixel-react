@@ -11,7 +11,7 @@ body {
     "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  height: 100%;
+  height: 100vh;
   background-color: black;
 
   justify-content: center;
@@ -20,7 +20,9 @@ body {
 
   font-family: "montserrat", sans-serif;
   font-weight: 500;
-
+  background-color: #D9AFD9;
+  background-image: linear-gradient(0deg, #8d708d 0%, #3f6063 100%);
+  
 }
 
 label {

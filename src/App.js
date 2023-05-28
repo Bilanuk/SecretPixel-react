@@ -30,7 +30,6 @@ function App() {
     return (
         <Router>
             <Header/>
-            <HeaderPlaceholder/>
                 <PageContainer>
                     <Routes>
                         <Route path='/' element={<HomePage/>}/>

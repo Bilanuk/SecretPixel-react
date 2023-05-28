@@ -2,15 +2,28 @@ import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 import { StyledNavLink } from "./StyledLinks";
 
+export const HeaderWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 55px;
+  width: 100%;
+`;
+
 export const StyledHeader = styled.header`
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  gap: 10px;
   height: 55px;
-  background-color: black;
-  border-bottom: 1px solid white;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  border-radius: 5px;
   z-index: 100;
   position: fixed;
-  width: 100vw;
+  margin-top: 10px;
+  min-width: 500px;
+  max-width: 70%;
+  width: 100%;
 `;
 
 export const StyledNav = styled.nav`

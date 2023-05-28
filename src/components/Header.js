@@ -9,7 +9,8 @@ import {
   StyledHeader,
   StyledNavLink,
   StyledDropDown,
-  StyledDropDownContent
+  StyledDropDownContent,
+  HeaderWrapper,
 } from "../styled/styles";
 import { BsPerson } from "react-icons/bs";
 import { MdLogout } from "react-icons/md";
@@ -26,39 +27,41 @@ const Header = () => {
   }, [])
 
   return (
-    <StyledHeader>
-      <StyledLogoWrapper>
-        <StyledNavLink to='/'><StyledLogo src={Logo}/></StyledNavLink>
-      </StyledLogoWrapper>
+    <HeaderWrapper>
+      <StyledHeader>
+        <StyledLogoWrapper>
+          <StyledNavLink to='/'><StyledLogo src={Logo} /></StyledNavLink>
+        </StyledLogoWrapper>
 
-      <StyledNav>
-        { userInfo ? (
-          <>
-            <StyledDropDown to='/user-profile'>
-              <>
-                {userInfo?.username} <IoMdArrowDropdown/>
-                <StyledDropDownContent>
-                  <StyledNavLink to='/user-profile'><BsPerson/>Profile</StyledNavLink>
-                  <StyledNavLink to='/app'><IoMdApps/>App</StyledNavLink>
-                  <hr/>
-                  <StyledNavLink to='/settings'>
-                    <CiSettings/>Settings
-                  </StyledNavLink>
-                  <StyledNavLink onClick={() => dispatch(userLogout())}>
-                    <MdLogout/>Logout
-                  </StyledNavLink>
-                </StyledDropDownContent>
-              </>
-            </StyledDropDown>
-          </>
-        ) : (
-          <>
-            <StyledNavLink to='/register'>Register</StyledNavLink>
-            <StyledNavLink to='/login'>Login</StyledNavLink>
-          </>
-        )}
-      </StyledNav>
-    </StyledHeader>
+        <StyledNav>
+          {userInfo ? (
+            <>
+              <StyledDropDown to='/user-profile'>
+                <>
+                  {userInfo?.username} <IoMdArrowDropdown />
+                  <StyledDropDownContent>
+                    <StyledNavLink to='/user-profile'><BsPerson />Profile</StyledNavLink>
+                    <StyledNavLink to='/app'><IoMdApps />App</StyledNavLink>
+                    <hr />
+                    <StyledNavLink to='/settings'>
+                      <CiSettings />Settings
+                    </StyledNavLink>
+                    <StyledNavLink onClick={() => dispatch(userLogout())}>
+                      <MdLogout />Logout
+                    </StyledNavLink>
+                  </StyledDropDownContent>
+                </>
+              </StyledDropDown>
+            </>
+          ) : (
+            <>
+              <StyledNavLink to='/register'>Register</StyledNavLink>
+              <StyledNavLink to='/login'>Login</StyledNavLink>
+            </>
+          )}
+        </StyledNav>
+      </StyledHeader>
+    </HeaderWrapper>
   )
 }
 
