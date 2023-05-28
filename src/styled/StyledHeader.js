@@ -15,8 +15,8 @@ export const StyledHeader = styled.header`
   justify-content: space-between;
   gap: 10px;
   height: 55px;
-  background-color: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(5px);
+  background-color: rgba(0, 0, 0, 0);
+  width: 100%;
   border-radius: 5px;
   z-index: 100;
   position: fixed;
