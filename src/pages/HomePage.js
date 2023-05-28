@@ -12,6 +12,7 @@ import { BsChatDots } from 'react-icons/bs';
 function HomePage() {
   return (
     <PageSection>
+<<<<<<< HEAD
    
       <div class="intro">
         <tittle> Sicret Pixel Art</tittle>
@@ -53,6 +54,14 @@ function HomePage() {
       
       
     
+=======
+      <PageSectionName>Home page</PageSectionName>
+      <PageLineSeparator />
+
+
+
+      
+>>>>>>> 6e4c85a19fc23a2696cb18bc8ee5250df7d4df25
     </PageSection>
   );
 }

@@ -1,13 +1,15 @@
 import { configureStore } from '@reduxjs/toolkit'
-import { knSoundApi } from "./knSoundApi";
+import { SecretPixelApi } from "./SecretPixelApi";
 import userReducer from './user/userSlice';
+import imageListReducer from './imageList/imageListSlice';
 
 const store = configureStore({
   reducer: {
     user: userReducer,
-    [knSoundApi.reducerPath]: knSoundApi.reducer,
+    imageList: imageListReducer,
+    [SecretPixelApi.reducerPath]: SecretPixelApi.reducer,
   },
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(knSoundApi.middleware)
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(SecretPixelApi.middleware)
 })
 
 export default store;
