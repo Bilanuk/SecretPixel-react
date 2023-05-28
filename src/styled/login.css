@@ -106,10 +106,6 @@ select:-webkit-autofill:focus {
   color: white;
 }
 
-h1 {
-  color: white;
-}
-
 .form {
   width: 70%;
   margin: 0 auto;

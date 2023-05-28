@@ -1,12 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { SecretPixelApi } from "./SecretPixelApi";
 import userReducer from './user/userSlice';
-import imageListReducer from './imageList/imageListSlice';
+import bmpEditorReducer from './bmpEditor/bmpEditorSlice';
 
 const store = configureStore({
   reducer: {
     user: userReducer,
-    imageList: imageListReducer,
+    bmpEditor: bmpEditorReducer,
     [SecretPixelApi.reducerPath]: SecretPixelApi.reducer,
   },
   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(SecretPixelApi.middleware)

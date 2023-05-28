@@ -3,8 +3,8 @@ import { useShowImageQuery } from "../../redux/SecretPixelApi";
 
 function EditPanel() {
   const dispatch = useDispatch();
-  const currentImage = useSelector((state) => state.imageList.currentImage);
-  const { data, error, isLoading } = useShowImageQuery(currentImage);
+  const currentImageId = useSelector((state) => state.bmpEditor.currentImageId);
+  const { data, error, isLoading } = useShowImageQuery(currentImageId);
 
   if (isLoading) {
     return <h1>Loading...</h1>;
@@ -15,7 +15,9 @@ function EditPanel() {
   }
 
   return (
-    <img src={data.image_url} alt="currentImage" />
+    <div>
+      <p>Image id: {data?.id}</p>
+    </div>
   );
 }
 

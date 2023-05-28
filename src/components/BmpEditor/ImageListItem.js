@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { setCurrentImage } from '../../redux/imageList/imageListSlice';
+import { setCurrentImageId } from '../../redux/bmpEditor/bmpEditorSlice';
 import styled from 'styled-components';
 
 const StyledListItem = styled.div`
@@ -39,7 +39,7 @@ function ImageListItem(props) {
   const dispatch = useDispatch();
 
   function ImageItemClicked() {
-    dispatch(setCurrentImage(props.id));
+    dispatch(setCurrentImageId(props.id));
   }
 
   return (

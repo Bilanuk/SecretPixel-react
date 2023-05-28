@@ -88,8 +88,16 @@ h1 {
   font-weight: 900;
   font-size: 35px;
   margin: 0 auto;
-  max-width: 200px;
   display: block;
+  color: white;
+}
+
+h2 {
+  padding-bottom: 30px;
+  font-weight: 900;
+  margin: 0 auto;
+  display: block;
+  color: white;
 }
 
 .background {
