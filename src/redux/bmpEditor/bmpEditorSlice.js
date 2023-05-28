@@ -7,7 +7,7 @@ export const ModeEnum = {
 
 const initialState = {
   currentImageId: null,
-  currentMode: null,
+  currentMode: "MESSAGE",
 };
 
 const bmpEditorSlice = createSlice({
