@@ -58,11 +58,12 @@ export const StyledDropDownContent = styled.div`
   border-radius: 5px;
   top: 25px;
   left: 0;
-  background-color: #000000;
+  background-color: transparent;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   transition: .1s ease-in-out;
   padding: 12px 12px;
+  backdrop-filter: blur(6px);
 
   &:hover {
     display: block;

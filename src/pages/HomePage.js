@@ -10,6 +10,10 @@ function HomePage() {
     <PageSection>
       <PageSectionName>Home page</PageSectionName>
       <PageLineSeparator />
+
+
+
+      
     </PageSection>
   );
 }
