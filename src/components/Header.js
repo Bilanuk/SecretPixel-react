@@ -12,10 +12,11 @@ import {
   StyledDropDownContent
 } from "../styled/styles";
 import { BsPerson } from "react-icons/bs";
-import { MdLogout } from "react-icons/md"
-import { IoMdArrowDropdown } from "react-icons/io"
+import { MdLogout } from "react-icons/md";
+import { IoMdApps } from "react-icons/io";
+import { IoMdArrowDropdown } from "react-icons/io";
 import { CiSettings } from "react-icons/ci";
-// 
+
 const Header = () => {
   const { userInfo } = useSelector((state) => state.user)
   const dispatch = useDispatch()
@@ -38,6 +39,7 @@ const Header = () => {
                 {userInfo?.username} <IoMdArrowDropdown/>
                 <StyledDropDownContent>
                   <StyledNavLink to='/user-profile'><BsPerson/>Profile</StyledNavLink>
+                  <StyledNavLink to='/app'><IoMdApps/>App</StyledNavLink>
                   <hr/>
                   <StyledNavLink to='/settings'>
                     <CiSettings/>Settings

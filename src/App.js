@@ -3,6 +3,7 @@ import Header from './components/Header'
 import LoginPage from './pages/LoginPage'
 import RegisterPage from './pages/RegisterPage'
 import ProfilePage from './pages/ProfilePage'
+import AppPage from './pages/AppPage'
 import HomePage from './pages/HomePage'
 import ProtectedRoute from './features/ProtectedRoute'
 import SettingsPage from "./pages/SettingsPage";
@@ -36,6 +37,7 @@ function App() {
                         <Route path='/login' element={<LoginPage/>}/>
                         <Route path='/register' element={<RegisterPage/>}/>
                         <Route element={<ProtectedRoute/>}>
+                            <Route path='/app' element={<AppPage/>}/>
                             <Route path='/user-profile' element={<ProfilePage/>}/>
                         </Route>
                         <Route path='/settings' element={<SettingsPage/>}/>
