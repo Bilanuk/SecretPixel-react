@@ -20,10 +20,18 @@ export const StyledNav = styled.nav`
   margin: 20px;
 `;
 
+export const StyledLogoWrapper = styled.nav`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  overflow: hidden;
+`;
+
 export const StyledLogo = styled.img`
   display: inline-block;
   width: 8rem;
-  height: 8rem;
+  height: 100%;
   stroke-width: 0;
   stroke: currentColor;
   fill: currentColor;

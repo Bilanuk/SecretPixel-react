@@ -1,7 +1,7 @@
 import { StyledButton } from "./StyledButtons";
-import { StyledHeader, StyledNav, StyledLogo, StyledDropDown, StyledDropDownContent} from "./StyledHeader";
+import { StyledHeader, StyledNav, StyledLogoWrapper, StyledLogo, StyledDropDown, StyledDropDownContent} from "./StyledHeader";
 import { StyledNavLink } from "./StyledLinks";
-import Logo from "../shared/KnSoundLogo.svg"
+import Logo from "../shared/SecretPixel.svg";
 
 import styled from "styled-components";
 
@@ -33,5 +33,5 @@ const PageLineSeparator = styled.hr`
   border: 0px;
 `;
 
-export {StyledButton, StyledLogo, StyledNav, StyledHeader, StyledNavLink,
+export {StyledButton, StyledLogo, StyledNav, StyledLogoWrapper, StyledHeader, StyledNavLink,
   Logo, StyledDropDown, StyledDropDownContent, PageContainer, PageSection, PageSectionName, PageLineSeparator }

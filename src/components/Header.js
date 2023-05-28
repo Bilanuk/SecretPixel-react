@@ -4,6 +4,7 @@ import { getUserDetails, userLogout } from "../redux/user/userActions";
 import {
   Logo,
   StyledNav,
+  StyledLogoWrapper,
   StyledLogo,
   StyledHeader,
   StyledNavLink,
@@ -25,9 +26,9 @@ const Header = () => {
 
   return (
     <StyledHeader>
-      <StyledNav>
+      <StyledLogoWrapper>
         <StyledNavLink to='/'><StyledLogo src={Logo}/></StyledNavLink>
-      </StyledNav>
+      </StyledLogoWrapper>
 
       <StyledNav>
         { userInfo ? (
