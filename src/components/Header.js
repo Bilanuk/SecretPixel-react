@@ -17,7 +17,7 @@ import { MdLogout } from "react-icons/md";
 import { IoMdApps } from "react-icons/io";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { CiSettings } from "react-icons/ci";
-import { SiAboutdotme } from "react-icons/si";
+import { BsInfoCircle } from "react-icons/bs";
 
 const Header = () => {
   const { userInfo } = useSelector((state) => state.user)
@@ -45,7 +45,7 @@ const Header = () => {
                     <StyledNavLink to='/app'><IoMdApps />App</StyledNavLink>
                     <hr/>
                     <StyledNavLink to='/about'>
-                      <SiAboutdotme />About
+                      <BsInfoCircle />About
                     </StyledNavLink>
 
                     <StyledNavLink to='/settings'>

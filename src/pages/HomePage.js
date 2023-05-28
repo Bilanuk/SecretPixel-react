@@ -5,6 +5,7 @@ import {
 } from '../styled/styles';
 
 import '../styled/HomePage.css';
+
 import { BsPen } from 'react-icons/bs';
 import { BsEmojiSmile } from 'react-icons/bs';
 import { BsChatDots } from 'react-icons/bs';
