@@ -1,13 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-export const currentMode = {
+export const ModeEnum = {
   MESSAGE: 'MESSAGE',
   EDIT: 'EDIT',
 };
 
 const initialState = {
   currentImageId: null,
-  currentMode,
+  currentMode: null,
 };
 
 const bmpEditorSlice = createSlice({
