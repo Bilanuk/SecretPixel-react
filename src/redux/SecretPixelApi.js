@@ -17,10 +17,23 @@ export const SecretPixelApi = createApi({
       query: (q) => `images/${q}`,
       providesTags: ['Images'],
     }),
-    getDecodedMessage: build.query({
-      query: (q) => `images/${q}/read_message`,
+    getDecodedMessage: build.mutation({
+      query: (q) => ({
+        url: `images/${q}/read_message`,
+        method: 'GET',
+        credentials: 'include',
+      }),
+      invalidatesTags: ['Images'],
+    }),
+    getRecentEncodedMessages: build.query({
+      query: () => `messages/sent_messages`,
       providesTags: ['Images'],
     }),
+    getRecnetDecodedMessages: build.query({
+      query: () => `messages/received_messages`,
+      providesTags: ['Images'],
+    }),
+
     uploadImage: build.mutation({
       query: (body) => ({
         url: `images`,
@@ -45,7 +58,9 @@ export const SecretPixelApi = createApi({
 export const {
   useGetImagesQuery,
   useShowImageQuery,
-  useGetDecodedMessageQuery,
+  useGetRecentEncodedMessagesQuery,
+  useGetRecnetDecodedMessagesQuery,
+  useGetDecodedMessageMutation,
   useEncodeMessageMutation,
   useUploadImageMutation,
 } = SecretPixelApi;

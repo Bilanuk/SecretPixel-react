@@ -1,8 +1,7 @@
-import { useEncodeMessageMutation } from '../../redux/SecretPixelApi';
+import { useEncodeMessageMutation, useGetDecodedMessageMutation } from '../../redux/SecretPixelApi';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { MdCleaningServices } from 'react-icons/md';
-import axiosInstance from '../../features/axiosInstance';
 import styled from 'styled-components';
 
 const MessagePanelWrapper = styled.div`
@@ -113,6 +112,8 @@ const StyledDecodeButton = styled(StyledButton)`
 function MessagePanel() {
   const [encodeMessage, { data, error, isLoading }] =
     useEncodeMessageMutation();
+  const [getDecodedMessage, { data: decodedMessageData }] = 
+    useGetDecodedMessageMutation();
   const [message, setMessage] = useState('');
   const [decodedMessage, setDecodedMessage] = useState('');
   const currentImageId = useSelector((state) => state.bmpEditor.currentImageId);
@@ -131,19 +132,17 @@ function MessagePanel() {
     });
   };
 
+  useEffect(() => {
+    if (decodedMessageData === undefined) {
+      setDecodedMessage('No message found');
+    }
+
+    setDecodedMessage(decodedMessageData?.message);
+  }, [decodedMessageData]);
+
   const handleDecodeMessage = () => {
-    axiosInstance
-      .get(`images/${currentImageId}/read_message`)
-      .then((response) => {
-        if (response.data.message == '' || response.data.message === '@') {
-          setDecodedMessage('No message found!');
-          return;
-        }
-        setDecodedMessage(response.data.message);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    setDecodedMessage('');
+    getDecodedMessage(currentImageId);
   };
 
   if (isLoading) {
@@ -171,7 +170,7 @@ function MessagePanel() {
         </ButtonsWrapper>
       </MessagePanelSection>
       <MessagePanelSection>
-        <DecodedTextArea value={decodedMessage} readOnly />
+        <DecodedTextArea value={decodedMessageData?.message ? decodedMessageData?.message : "Can't find message"} readOnly />
         <ButtonsWrapper>
           <StyledDecodeButton onClick={handleDecodeMessage}>
             Decode Message
