@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useGetImagesQuery } from '../../redux/SecretPixelApi';
+import { setModalIsOpen } from '../../redux/bmpEditor/bmpEditorSlice';
 import styled from 'styled-components';
 
 import { MdUpload } from 'react-icons/md';
@@ -34,8 +35,9 @@ const AddNewImageButton = styled.button`
 
 function ImageList() {
   const dispatch = useDispatch();
+  const modalIsOpen = useSelector((state) => state.bmpEditor?.modalIsOpen);
   const { data, error, isLoading } = useGetImagesQuery();
-
+  
   if (isLoading) {
     return <h1>Loading...</h1>;
   }
@@ -46,11 +48,15 @@ function ImageList() {
 
   return (
     <ImagesListWrapper>
-      <AddNewImageButton>
+      <AddNewImageButton
+        onClick={() => {
+          dispatch(setModalIsOpen(!modalIsOpen));
+        }}
+      >
         <MdUpload />
       </AddNewImageButton>
       {data?.map((item) => (
-        <ImageListItem key={item.id} id={item.id} image_url={item.image_url} />
+        <ImageListItem key={item.id} id={item.id} name={item.name} image_url={item.image_url} />
       ))}
     </ImagesListWrapper>
   );

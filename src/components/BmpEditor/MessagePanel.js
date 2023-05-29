@@ -98,7 +98,13 @@ const StyledCleanDecodedTextButton = styled(StyledButton)`
   border-radius: 0 0 5px 0;
 `;
 
-const StyledEncodeButton = styled(StyledButton)``;
+const StyledCleanEncodedTextButton = styled(StyledButton)`
+  border-radius: 0 0 5px 0;
+`;
+
+const StyledEncodeButton = styled(StyledButton)`
+  border-radius: 0 0 0 5px;
+`;
 
 const StyledDecodeButton = styled(StyledButton)`
   border-radius: 0 0 0 5px;
@@ -129,7 +135,7 @@ function MessagePanel() {
     axiosInstance
       .get(`images/${currentImageId}/read_message`)
       .then((response) => {
-        if (response.data.message === '' || response.data.message === '@') {
+        if (response.data.message == '' || response.data.message === '@') {
           setDecodedMessage('No message found!');
           return;
         }
@@ -155,9 +161,14 @@ function MessagePanel() {
           value={message}
           onChange={(e) => setMessage(e.target.value)}
         />
-        <StyledEncodeButton onClick={handleEncodeMessage}>
-          Encode Message
-        </StyledEncodeButton>
+        <ButtonsWrapper>
+          <StyledEncodeButton onClick={handleEncodeMessage}>
+            Encode Message
+          </StyledEncodeButton>
+          <StyledCleanEncodedTextButton onClick={() => setMessage('')}>
+            <MdCleaningServices />
+          </StyledCleanEncodedTextButton>
+        </ButtonsWrapper>
       </MessagePanelSection>
       <MessagePanelSection>
         <DecodedTextArea value={decodedMessage} readOnly />

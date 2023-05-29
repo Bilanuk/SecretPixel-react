@@ -8,6 +8,7 @@ export const ModeEnum = {
 const initialState = {
   currentImageId: null,
   currentMode: "MESSAGE",
+  modalIsOpen: false,
 };
 
 const bmpEditorSlice = createSlice({
@@ -20,8 +21,11 @@ const bmpEditorSlice = createSlice({
     setCurrentMode(state, action) {
       state.currentMode = action.payload;
     },
+    setModalIsOpen(state, action) {
+      state.modalIsOpen = action.payload;
+    },
   },
 });
 
-export const { setCurrentImageId, setCurrentMode } = bmpEditorSlice.actions;
+export const { setCurrentImageId, setCurrentMode, setModalIsOpen } = bmpEditorSlice.actions;
 export default bmpEditorSlice.reducer;

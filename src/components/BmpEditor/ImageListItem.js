@@ -45,7 +45,7 @@ function ImageListItem(props) {
   return (
     <StyledListItem onClick={ImageItemClicked}>
       <StyledListItemImage src={props.image_url} />
-      <StyledListItemName>Test name</StyledListItemName>
+      <StyledListItemName>{props?.name}</StyledListItemName>
     </StyledListItem>
   );
 }
