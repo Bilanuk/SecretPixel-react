@@ -5,6 +5,12 @@ import MessagePanel from './MessagePanel';
 import BitMapPanel from './BitMapPanel';
 import styled from 'styled-components';
 
+const EditPanelWrapper = styled.div`
+  padding: 5px;
+  width: 100%;
+  height: 100%;
+`;
+
 const EditPanelNavbar = styled.div`
   display: flex;
   flex-direction: row;
@@ -12,7 +18,6 @@ const EditPanelNavbar = styled.div`
   justify-content: center;
   height: 40px;
   width: 100%;
-  margin: 5px;
 `;
 
 const ModeSwitchButton = styled.button`
@@ -29,7 +34,6 @@ const ModeSwitchButton = styled.button`
   color: black;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
-  margin: 5px 5px 5px 5px;
   font-size: 20px;
   font-weight: 600;
 
@@ -37,6 +41,18 @@ const ModeSwitchButton = styled.button`
     background-color: transparent;
     color: white;
   }
+`;
+
+const StyledEditPanelContent = styled.div`
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  border: none;
+  color: black;
+  transition: all 0.2s ease-in-out;
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 5px;
 `;
 
 function EditPanel() {
@@ -58,16 +74,34 @@ function EditPanel() {
   }
 
   return (
-    <>
+    <EditPanelWrapper>
       <EditPanelNavbar>
-        <ModeSwitchButton onClick={() => ModeSwitchButtonClicked(ModeEnum.MESSAGE)}>Message</ModeSwitchButton>
-        <ModeSwitchButton onClick={() => ModeSwitchButtonClicked(ModeEnum.EDIT)}>Bitmap</ModeSwitchButton>
+        <ModeSwitchButton
+          onClick={() => ModeSwitchButtonClicked(ModeEnum.MESSAGE)}
+          style={{
+            backgroundColor:
+              currentMode == ModeEnum.MESSAGE ? '#eee' : 'transparent',
+            color: currentMode == ModeEnum.MESSAGE ? 'black' : 'white',
+          }}
+        >
+          Message
+        </ModeSwitchButton>
+        <ModeSwitchButton
+          onClick={() => ModeSwitchButtonClicked(ModeEnum.EDIT)}
+          style={{
+            backgroundColor:
+              currentMode == ModeEnum.EDIT ? '#eee' : 'transparent',
+            color: currentMode == ModeEnum.EDIT ? 'black' : 'white',
+          }}
+        >
+          Bitmap
+        </ModeSwitchButton>
       </EditPanelNavbar>
-      <div>
-        { currentMode == ModeEnum.MESSAGE && <MessagePanel /> }
-        { currentMode == ModeEnum.EDIT && <BitMapPanel /> }
-      </div>
-    </>
+      <StyledEditPanelContent>
+        {currentMode == ModeEnum.MESSAGE && <MessagePanel />}
+        {currentMode == ModeEnum.EDIT && <BitMapPanel />}
+      </StyledEditPanelContent>
+    </EditPanelWrapper>
   );
 }
 

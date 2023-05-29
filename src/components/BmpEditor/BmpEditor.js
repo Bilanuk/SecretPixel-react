@@ -35,7 +35,6 @@ const MiddlePanel = styled.div`
   flex: 3;
   min-width: 450px;
   border-radius: 5px;
-  border: 1px solid #ccc;
   margin: 5px;
   transition: all 0.2s ease-in-out;
   height: 350px;
