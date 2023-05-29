@@ -4,32 +4,27 @@ import {
   PageSection,
 } from '../styled/styles';
 import BmpEditor from '../components/BmpEditor/BmpEditor';
-import Modal from 'react-modal';
 import { BsInfoCircle } from 'react-icons/bs';
-import {
-  Logo,
-  StyledNav,
-  StyledLogoWrapper,
-  StyledLogo,
-  StyledHeader,
-  StyledNavLink,
-  StyledDropDown,
-  StyledDropDownContent,
-  HeaderWrapper,
-} from '../styled/styles';
+import styled from 'styled-components';
 
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
-const handleClick = () => {};
+const StyledInfoIcon = styled(BsInfoCircle)`
+  right: 0;
+  position: absolute;
+  width: 15%;
+  height: 40px;
+  color: #fff;
+`;
 
 function AppPage() {
   return (
     <PageSection>
       <PageSectionName>
         App page
-        <a href="/instr" onClick={handleClick}>
-          <BsInfoCircle className="IconApp" />
-        </a>
+        <NavLink to="/instr">
+          <StyledInfoIcon />
+        </NavLink>
       </PageSectionName>
 
       <PageLineSeparator />

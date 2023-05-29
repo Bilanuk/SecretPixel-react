@@ -55,6 +55,7 @@ const RightPanel = styled.div`
   min-width: 450px;
   border-radius: 5px;
   border: 1px solid #ccc;
+  background-color: black;
   margin: 5px;
   transition: all 0.2s ease-in-out;
   height: 350px;
