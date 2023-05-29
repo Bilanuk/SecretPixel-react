@@ -2,6 +2,7 @@ import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import Header from './components/Header'
 import AboutPage from './pages/AboutPage'
 import LoginPage from './pages/LoginPage'
+import InstrPage from './pages/InstrPage'
 import RegisterPage from './pages/RegisterPage'
 import ProfilePage from './pages/ProfilePage'
 import AppPage from './pages/AppPage'
@@ -41,6 +42,7 @@ function App() {
                             <Route path='/user-profile' element={<ProfilePage/>}/>
                         </Route>
                         <Route path='/settings' element={<SettingsPage/>}/>
+                        <Route path='/instr' element={<InstrPage/>}/>
                         <Route path='/about' element={<AboutPage/>}/>
                     </Routes>
                 </PageContainer>

@@ -108,12 +108,45 @@ h2 {
   height: 100vh;
 }
 
+.IconApp {
+ right: 0;
+ position: absolute;
+ width: 15%;
+ height: 40px;
+ color:#fff;
+}
+
+.InstrText {
+ 
+    font-size: 20px;
+    font-weight: 900;
+    margin: 0 auto;
+    display: block;
+    color: white;
+  
+    padding-bottom: 30px;
+    padding-top: 30px;
+  }
+
+  .InstrText li {
+    padding: 10px 0;
+  }
+
+.InstrTittle {
+  font-size: 40px;
+  font-weight: 900;
+  margin: 0 auto;
+  display: block;
+  color: white;
+  text-align: center;
+  padding-bottom: 30px;
+}
 .cube {
   position: absolute;
   top: 80vh;
   left: 45vw;
   width: 10px;
-  height: 10px;
+  height: 0px;
   border: solid 1px #d7d4e4;
   transform-origin: top left;
   transform: scale(0) rotate(0deg) translate(-50%, -50%);
