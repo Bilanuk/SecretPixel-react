@@ -17,6 +17,10 @@ export const SecretPixelApi = createApi({
       query: (q) => `images/${q}`,
       providesTags: ['Images'],
     }),
+    getDecodedMessage: build.query({
+      query: (q) => `images/${q}/read_message`,
+      providesTags: ['Images'],
+    }),
     encodeMessage: build.mutation({
       query: (body) => ({
         url: `images/${body?.id}`,
@@ -29,5 +33,5 @@ export const SecretPixelApi = createApi({
   }),
 });
 
-export const { useGetImagesQuery, useShowImageQuery, useEncodeMessageMutation } =
+export const { useGetImagesQuery, useShowImageQuery, useGetDecodedMessageQuery, useEncodeMessageMutation } =
   SecretPixelApi;
