@@ -1,4 +1,9 @@
 import { useGetRecentEncodedMessagesQuery, useGetRecnetDecodedMessagesQuery } from '../../redux/SecretPixelApi';
+import styled from 'styled-components';
+
+const RecentMessagesWrapper = styled.div`
+  color: white;
+`;
 
 function RecentMessages() {
   const { data: encodedMessages, isFetching: isFetchingEncodedMessages } = useGetRecentEncodedMessagesQuery();
@@ -9,7 +14,7 @@ function RecentMessages() {
   }
 
   return (
-    <div>
+    <RecentMessagesWrapper>
       <h3>Recent Encoded Messages</h3>
       <ul>
         {encodedMessages?.map((message) => (
@@ -22,7 +27,7 @@ function RecentMessages() {
           <li key={message.id}>{message.content}</li>
         ))}
       </ul>
-    </div>
+    </RecentMessagesWrapper>
   );
 }
 

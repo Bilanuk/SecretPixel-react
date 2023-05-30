@@ -33,7 +33,15 @@ export const SecretPixelApi = createApi({
       query: () => `messages/received_messages`,
       providesTags: ['Images'],
     }),
-
+    generateBitmap: build.mutation({
+      query: (body) => ({
+        url: `/images/${body?.id}/generate_dependent_bmp`,
+        method: 'POST',
+        credentials: 'include',
+        body,
+      }),
+      invalidatesTags: ['Images'],
+    }),
     uploadImage: build.mutation({
       query: (body) => ({
         url: `images`,
@@ -63,4 +71,5 @@ export const {
   useGetDecodedMessageMutation,
   useEncodeMessageMutation,
   useUploadImageMutation,
+  useGenerateBitmapMutation,
 } = SecretPixelApi;

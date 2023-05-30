@@ -170,7 +170,7 @@ function MessagePanel() {
         </ButtonsWrapper>
       </MessagePanelSection>
       <MessagePanelSection>
-        <DecodedTextArea value={decodedMessageData?.message ? decodedMessageData?.message : "Can't find message"} readOnly />
+        <DecodedTextArea value={decodedMessageData?.message ? decodedMessageData?.message : ""} readOnly />
         <ButtonsWrapper>
           <StyledDecodeButton onClick={handleDecodeMessage}>
             Decode Message
