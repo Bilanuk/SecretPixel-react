@@ -1,4 +1,4 @@
-import { useGenerateBitmapMutation } from '../../redux/SecretPixelApi';
+import { useGenerateBitmapMutation, useShowImageQuery } from '../../redux/SecretPixelApi';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { MdCleaningServices } from 'react-icons/md';
@@ -56,6 +56,7 @@ const BitMapFormWrapper = styled.div`
 
 function BitMapPanel() {
   const currentImageId = useSelector((state) => state.bmpEditor.currentImageId);
+  const { data: imageData } = useShowImageQuery(currentImageId);
   const dispatch = useDispatch();
 
   const [generateBitmap, { data, error, isLoading }] =
@@ -64,6 +65,7 @@ function BitMapPanel() {
   const { register, handleSubmit } = useForm();
 
   function onSubmit(data) {
+    console.log(imageData);
     generateBitmap({
       id: currentImageId,
       method: data.method,
@@ -89,12 +91,12 @@ function BitMapPanel() {
           alignItems: 'center',
         }}
       >
-        <StyledSelect {...register(`method`)}>
+        <StyledSelect defaultValue={imageData?.setting?.method} {...register(`method`)}>
           <StyledOption value="snowflake">snowflake</StyledOption>
           <StyledOption value="carpet">carpet</StyledOption>
           <StyledOption value="triangle">triangle</StyledOption>
         </StyledSelect>
-        <StyledSelect {...register(`color`)}>
+        <StyledSelect defaultValue={imageData?.setting?.color} {...register(`color`)}>
           <StyledOption value="black_white">black_white</StyledOption>
           <StyledOption value="white_black">white_black</StyledOption>
         </StyledSelect>
